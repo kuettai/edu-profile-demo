@@ -1,0 +1,278 @@
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  background: #fafafa;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+main { max-width: 700px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* ── Typography ── */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 1rem;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  color: #222;
+}
+
+p { color: #555; }
+
+a { color: #6C8EBF; text-decoration: none; transition: color 0.3s ease; }
+a:hover { color: #4a6d9c; }
+
+/* ── Sections ── */
+.section {
+  padding: 3rem 0;
+  border-top: 1px solid #eee;
+}
+
+.hero { border-top: none; text-align: center; padding: 5rem 0 3rem; }
+
+/* ── Hero ── */
+.avatar { margin-bottom: 1.5rem; }
+.avatar svg { transition: transform 0.3s ease; }
+.avatar svg:hover { transform: scale(1.03); }
+
+.tagline {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #888;
+  margin-top: 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+/* ── Skills Tags ── */
+.tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+.tag {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  transform: scale(1.05);
+  border-color: #6C8EBF;
+  color: #6C8EBF;
+}
+
+/* ── Experience Timeline ── */
+.timeline { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.entry:last-child { border-bottom: none; padding-bottom: 0; }
+.entry strong { font-weight: 600; color: #333; }
+.entry span { font-size: 0.9rem; color: #666; }
+.entry time { font-size: 0.8rem; color: #aaa; font-weight: 300; }
+
+/* ── Achievements ── */
+.achievements ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.achievements li { font-size: 0.95rem; color: #555; }
+
+/* ── Fun Facts ── */
+.facts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.fact-card {
+  font-size: 0.9rem;
+  color: #555;
+  padding: 1.2rem;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Social Links ── */
+.social-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #6C8EBF;
+  transform: scale(1.15);
+}
+
+.social-links svg { width: 20px; height: 20px; }
+
+.social { text-align: center; }
+
+/* ── CTA Button ── */
+.cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.8rem;
+  border: 1px solid #6C8EBF;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6C8EBF;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  background: #6C8EBF;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(108, 142, 191, 0.3);
+}
+
+/* ── Projects Gallery ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  color: inherit;
+}
+
+.project-card.featured { grid-column: 1 / -1; }
+.project-card.featured .project-banner { height: 100px; }
+
+.project-banner {
+  height: 72px;
+  position: relative;
+}
+
+.project-stats {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.9);
+  background: rgba(0,0,0,0.2);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.gradient-1 { background: linear-gradient(135deg, #6C8EBF, #4a6d9c); }
+.gradient-2 { background: linear-gradient(135deg, #7D9B76, #5a7d52); }
+.gradient-3 { background: linear-gradient(135deg, #C4A4A4, #a88585); }
+.gradient-4 { background: linear-gradient(135deg, #B8A9C9, #8e7ba8); }
+
+.project-body { padding: 1rem 1.2rem 1.2rem; }
+.project-body h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; color: #333; }
+.project-body p { font-size: 0.85rem; color: #666; line-height: 1.5; margin-bottom: 0.8rem; }
+
+.project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.project-tags span {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  color: #888;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid #eee;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+footer p { font-size: 0.8rem; color: #bbb; }
+
+/* ── Entrance Animations ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.section {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* ── Floating avatar ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+.avatar svg { animation: float 3s ease-in-out infinite; }
+.avatar svg:hover { animation-play-state: paused; transform: scale(1.03); }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  .facts-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card.featured { grid-column: auto; }
+  .hero { padding: 3rem 0 2rem; }
+  .section { padding: 2rem 0; }
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

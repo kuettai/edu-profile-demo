@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catan — The Board Game</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="hero section-anim">
+    <div class="hero-shapes">
+      <div class="hex hex-1"></div>
+      <div class="hex hex-2"></div>
+      <div class="hex hex-3"></div>
+      <div class="hex hex-4"></div>
+      <div class="hex hex-5"></div>
+    </div>
+    <div class="hero-content">
+      <div class="avatar">
+        <svg width="130" height="130" viewBox="0 0 130 130" role="img" aria-label="Catan logo">
+          <polygon points="65,5 120,35 120,95 65,125 10,95 10,35" fill="#E8652B" stroke="#F4A83D" stroke-width="4"/>
+          <text x="65" y="72" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="'Fredoka', sans-serif" font-size="28" font-weight="700">C</text>
+        </svg>
+      </div>
+      <h1>Catan</h1>
+      <p class="tagline">🏝️ Trade, Build, Settle — The World's Favorite Board Game</p>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="card about section-anim" style="animation-delay:0.1s">
+      <h2>🌍 About the Game</h2>
+      <p>Originally published as <em>The Settlers of Catan</em> in 1995 by Klaus Teuber, Catan has sold over 40 million copies in 40+ languages. Players collect and trade resources — wood, brick, sheep, wheat, and ore — to build roads, settlements, and cities on the island of Catan. Simple to learn, endlessly strategic, and guaranteed to end friendships (temporarily). It's the gateway game that launched millions into the world of modern board gaming.</p>
+    </section>
+
+    <section class="card resources section-anim" style="animation-delay:0.15s">
+      <h2>🪵 Resources</h2>
+      <div class="resource-grid">
+        <div class="resource-tile wood">🪵<span>Wood</span></div>
+        <div class="resource-tile brick">🧱<span>Brick</span></div>
+        <div class="resource-tile sheep">🐑<span>Sheep</span></div>
+        <div class="resource-tile wheat">🌾<span>Wheat</span></div>
+        <div class="resource-tile ore">⛰️<span>Ore</span></div>
+      </div>
+    </section>
+
+    <section class="card howto section-anim" style="animation-delay:0.2s">
+      <h2>🎲 How to Play</h2>
+      <div class="steps">
+        <div class="step"><span class="step-num">1</span><strong>Setup</strong><p>Build the island with random hex tiles. Place your first 2 settlements and roads.</p></div>
+        <div class="step"><span class="step-num">2</span><strong>Roll</strong><p>Roll two dice. Everyone with settlements on matching numbers collects resources.</p></div>
+        <div class="step"><span class="step-num">3</span><strong>Trade</strong><p>Negotiate with other players. "I'll give you 2 sheep for 1 ore!" Deals get wild.</p></div>
+        <div class="step"><span class="step-num">4</span><strong>Build</strong><p>Spend resources to build roads, settlements, cities, or buy development cards.</p></div>
+        <div class="step"><span class="step-num">5</span><strong>Win!</strong><p>First player to reach 10 victory points wins. 🏆</p></div>
+      </div>
+    </section>
+
+    <section class="card editions section-anim" style="animation-delay:0.25s">
+      <h2>📦 Popular Editions</h2>
+      <div class="editions-grid">
+        <div class="edition-card" style="--accent: #E8652B">
+          <span class="edition-emoji">🏝️</span>
+          <h3>Catan (Base)</h3>
+          <p>The original classic. 3-4 players, 60-120 min. Where it all begins.</p>
+          <div class="edition-tag">Must Have</div>
+        </div>
+        <div class="edition-card" style="--accent: #2B7A78">
+          <span class="edition-emoji">⚓</span>
+          <h3>Seafarers</h3>
+          <p>Explore the seas! Build ships, discover islands, and find gold.</p>
+          <div class="edition-tag">Expansion</div>
+        </div>
+        <div class="edition-card" style="--accent: #7B2D8E">
+          <span class="edition-emoji">🏰</span>
+          <h3>Cities & Knights</h3>
+          <p>Defend against barbarians, build city improvements, and collect commodities.</p>
+          <div class="edition-tag">Advanced</div>
+        </div>
+        <div class="edition-card" style="--accent: #D4A017">
+          <span class="edition-emoji">🧭</span>
+          <h3>Explorers & Pirates</h3>
+          <p>Missions, pirate lairs, fish, and spices. The biggest adventure expansion.</p>
+          <div class="edition-tag">Expansion</div>
+        </div>
+        <div class="edition-card" style="--accent: #C0392B">
+          <span class="edition-emoji">⚔️</span>
+          <h3>Catan Duel</h3>
+          <p>Head-to-head 2-player card game. Perfect for couples and rivals.</p>
+          <div class="edition-tag">2 Players</div>
+        </div>
+        <div class="edition-card" style="--accent: #27AE60">
+          <span class="edition-emoji">🌟</span>
+          <h3>Starfarers</h3>
+          <p>Catan in space! Build motherships, encounter aliens, trade across the galaxy.</p>
+          <div class="edition-tag">Standalone</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card achievements section-anim" style="animation-delay:0.3s">
+      <h2>🏆 By the Numbers</h2>
+      <div class="stats-grid">
+        <div class="stat-bubble" style="--bg: #E8652B"><strong>40M+</strong>Copies Sold</div>
+        <div class="stat-bubble" style="--bg: #2B7A78"><strong>40+</strong>Languages</div>
+        <div class="stat-bubble" style="--bg: #7B2D8E"><strong>1995</strong>First Published</div>
+        <div class="stat-bubble" style="--bg: #F4A83D"><strong>3-6</strong>Players</div>
+        <div class="stat-bubble" style="--bg: #C0392B"><strong>60-120</strong>Minutes</div>
+        <div class="stat-bubble" style="--bg: #27AE60"><strong>#1</strong>Gateway Game</div>
+      </div>
+    </section>
+
+    <section class="card funfacts section-anim" style="animation-delay:0.35s">
+      <h2>🤪 Fun Facts</h2>
+      <div class="sticky-grid">
+        <div class="sticky s1">🐑 "I have wood for sheep" is the most quoted (and giggled at) trade offer in board gaming history</div>
+        <div class="sticky s2">🎓 Catan is used in MBA programs to teach negotiation and resource management</div>
+        <div class="sticky s3">🏆 There's an annual Catan World Championship with players from 40+ countries</div>
+        <div class="sticky s4">😢 Creator Klaus Teuber passed away in 2023 — his family continues his legacy</div>
+        <div class="sticky s5">🚀 Astronauts have played Catan on the International Space Station!</div>
+        <div class="sticky s6">🤖 The robber piece is the most hated game component in board gaming</div>
+      </div>
+    </section>
+
+    <section class="card social section-anim" style="animation-delay:0.4s">
+      <h2>🔗 Learn More</h2>
+      <div class="link-row">
+        <a href="https://www.catan.com" target="_blank" rel="noopener" class="link-btn btn-orange">🌐 Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Catan" target="_blank" rel="noopener" class="link-btn btn-teal">📖 Wikipedia</a>
+        <a href="https://boardgamegeek.com/boardgame/13/catan" target="_blank" rel="noopener" class="link-btn btn-purple">🎲 BoardGameGeek</a>
+        <a href="https://www.youtube.com/watch?v=8IKQP3s-2dQ" target="_blank" rel="noopener" class="link-btn btn-red">▶️ How to Play</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="section-anim" style="animation-delay:0.45s">
+    <p>Built with 💜 and AI at Women In Tech Workshop · #GivetoGain</p>
+    <p class="sub">May your rolls be ever in your favor 🎲</p>
+  </footer>
+
+</body>
+</html>
