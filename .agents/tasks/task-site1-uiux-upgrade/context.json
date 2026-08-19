@@ -1,0 +1,19 @@
+{
+  "project_type": "Static HTML+CSS personal profile/portfolio site",
+  "language": "HTML, CSS",
+  "build_system": "None - static files served via GitHub Pages",
+  "test_framework": "None - visual inspection only",
+  "build_command": "N/A - no build step required",
+  "test_command": "N/A - validate HTML structure manually",
+  "verification_instructions": "Open site1/index.html in a browser and verify visual appearance, responsiveness, and interactions. Check that CSS validates without errors.",
+  "snapshot_or_generated_files": null,
+  "setup_instructions": "No setup needed - static HTML/CSS files",
+  "environment_constraints": "INTEGRATIONS_ONLY network mode - no external package installs. Google Fonts are referenced via link tags (load client-side for end users). No JavaScript allowed. Pure HTML + CSS only.",
+  "contribution_requirements": "Pure HTML + CSS, no JavaScript, no frameworks. Must remain responsive. Google Fonts via link tags are acceptable.",
+  "key_patterns": "Uses Inter (body) and Playfair Display (headings) fonts. Blue accent color #6C8EBF. CSS animations (fadeInUp, float). Section-based layout with .section class. Cards with hover transforms. Responsive breakpoint at 600px. prefers-reduced-motion respected.",
+  "relevant_files": [
+    "site1/index.html",
+    "site1/style.css"
+  ],
+  "directory_structure": "site1/ contains index.html and style.css. Other sites (site2, site3) exist but are not the focus."
+}
