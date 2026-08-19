@@ -10,8 +10,15 @@
 </head>
 <body>
 
-  <!-- Dark Mode Toggle (CSS-only checkbox hack) -->
+  <!-- Dark Mode Toggle (CSS-only checkbox hack)
+       STRUCTURAL CONSTRAINT: This checkbox MUST remain a direct sibling of
+       <nav>, <main>, and <footer> for the ~ (general sibling combinator) selectors
+       to work. Wrapping any of these elements in a container div will silently
+       break all dark mode styling with no visual error indication. -->
   <input type="checkbox" id="dark-mode-toggle" class="dark-mode-checkbox" aria-label="Toggle dark mode">
+
+  <!-- Mobile Navigation Toggle (CSS-only checkbox hack, same pattern as dark mode) -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Toggle navigation menu">
 
   <!-- Sticky Navigation -->
   <nav class="navbar">
@@ -23,11 +30,25 @@
       <a href="#projects">Projects</a>
       <a href="#connect">Connect</a>
     </div>
+    <label for="nav-toggle" class="hamburger-label" aria-label="Toggle navigation menu">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </label>
     <label for="dark-mode-toggle" class="dark-mode-label" aria-label="Toggle dark mode">
       <span class="sun-icon">&#9728;</span>
       <span class="moon-icon">&#9790;</span>
     </label>
   </nav>
+
+  <!-- Mobile Navigation Dropdown Panel (revealed when #nav-toggle is checked) -->
+  <div class="mobile-nav-panel">
+    <a href="#about">About</a>
+    <a href="#stats">Impact</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#connect">Connect</a>
+  </div>
 
   <main>
 

@@ -1,0 +1,28 @@
+{
+  "id": "FEAT-002",
+  "type": "fix",
+  "description": "Post-review polish fixes: CSS-only hamburger menu for mobile, backdrop-filter fallback, animation visibility safety net, and structural documentation comment for dark mode.",
+  "status": "in_progress",
+  "steps": [
+    "Add a CSS-only hamburger menu using a second checkbox hack for mobile nav accessibility",
+    "Add @supports not (backdrop-filter: blur(1px)) fallback for .navbar and .hero-content",
+    "Add animation visibility safety fallback so sections do not remain invisible if animations fail",
+    "Add a comment documenting the dark mode structural constraint (checkbox must remain a direct sibling of nav, main, footer)"
+  ],
+  "acceptance_criteria": [
+    "Mobile users can access navigation links via hamburger menu toggle",
+    "Browsers without backdrop-filter support get opaque backgrounds for .navbar and .hero-content",
+    "Sections are guaranteed visible even if animation execution fails",
+    "A code comment documents the dark mode sibling selector constraint",
+    "No JavaScript is introduced",
+    "Existing dark mode and responsive behavior remain intact"
+  ],
+  "verification": [
+    "Run 'cat site1/index.html | grep -c \"<script\" ' to verify no JavaScript (should output 0)",
+    "Run 'grep -c \"backdrop-filter\" site1/style.css' to verify @supports block exists",
+    "Run 'grep -c \"hamburger\" site1/style.css' to confirm hamburger styles are present",
+    "Verify HTML structure remains valid"
+  ],
+  "blocked_reason": null,
+  "findings": null
+}
