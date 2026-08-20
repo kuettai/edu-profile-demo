@@ -1,0 +1,45 @@
+{
+  "id": "FEAT-001",
+  "type": "fix",
+  "description": "Redesign Site3 (Catan board game fan page) CSS and HTML to be professional, mature, and highly readable while preserving all content. Replace childish/playful styling with a warm but sophisticated design inspired by Site1's professional patterns.",
+  "status": "in_progress",
+  "steps": [
+    "Replace Google Fonts in site3/index.html: swap Fredoka + Nunito for a professional combination like Inter (body) + Playfair Display (headings), matching Site1's approach",
+    "Rewrite site3/style.css to use CSS custom properties (variables) for colors, spacing, shadows, and border-radius - following Site1's :root pattern",
+    "Implement a warm but sophisticated color palette: warm neutral backgrounds (not bright cream), earth-tone accents (deep terracotta, forest green, warm gold) with proper contrast ratios for readability",
+    "Replace the hero section: remove animated gradient background and floating hexagons, use a clean centered design with subtle background like Site1's glass-morphism hero card or a simple warm gradient that doesn't animate wildly",
+    "Redesign card components: reduce border-radius from 20px to 12px, add subtle borders (1px solid var(--border)), use translateY(-4px) hover instead of scale/rotate, remove excessive shadows",
+    "Fix the resource tiles: remove rotate hover effect, use clean bordered cards with subtle background tints instead of vivid solid backgrounds",
+    "Redesign the How to Play steps: keep the numbered steps but use bordered cards with accent left-border (like Site1's timeline cards) instead of colored circle numbers, remove translateX hover",
+    "Redesign editions grid: use proper cards with top gradient bars (like Site1's stat-card::before pattern) instead of bottom colored borders, improve typography sizing and readability",
+    "Replace stat bubbles: instead of vivid colored bubble backgrounds, use clean bordered stat cards with large numbers in accent color (matching Site1's stat-card pattern)",
+    "Remove sticky-note fun facts: replace rotated sticky notes with clean grid cards (like Site1's fact-card pattern) - no rotation transforms, proper border and padding, consistent backgrounds",
+    "Refine link buttons: keep pill shape but use bordered style with hover color fill (like Site1's social-btn pattern) instead of always-solid colored buttons",
+    "Fix footer: add a gradient separator line above footer content, improve spacing",
+    "Tone down all animations: remove float keyframe from avatar, reduce hero gradient animation (or remove it), make fadeInUp animation more subtle, ensure hover transitions are just translateY with shadow changes - no rotate or scale",
+    "Improve typography hierarchy: ensure h2 is at least 1.8rem, body text at least 1rem (not 0.85rem), proper line-height (1.7-1.8), adequate spacing between elements",
+    "Ensure responsive design still works: maintain the existing breakpoints but update them for the new card/grid designs, ensure mobile readability is excellent",
+    "Add reduced-motion media query that properly disables all animations for accessibility"
+  ],
+  "acceptance_criteria": [
+    "All Catan content (About, Resources, How to Play, Editions, Stats, Fun Facts, Links) is preserved exactly as before",
+    "No JavaScript is used - pure HTML + CSS only",
+    "Typography uses professional fonts (Inter/Playfair Display or similar professional pair) with minimum 1rem body text",
+    "Color palette is warm and sophisticated - no bright orange/yellow dominant hero, no vivid stat bubbles",
+    "No rotating, bouncing, or floating animations on page elements - only subtle fade-in and translateY hover effects",
+    "Fun facts section uses clean cards instead of rotated sticky notes",
+    "All text has good contrast ratios (dark text on light backgrounds, or white text on sufficiently dark backgrounds)",
+    "Cards have consistent styling: 12px border-radius, subtle borders, translateY hover effects",
+    "Responsive design works at mobile (< 600px), tablet (600-900px), and desktop (> 900px) breakpoints",
+    "Page validates as valid HTML5 with no errors"
+  ],
+  "verification": [
+    "Visually inspect site3/index.html in a browser to confirm professional appearance",
+    "Check that all content sections are present and readable",
+    "Verify responsive behavior at different viewport widths",
+    "Confirm no JavaScript was added - only HTML and CSS changes",
+    "Check that hover effects are subtle (translateY) not playful (rotate/scale)"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}
