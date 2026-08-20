@@ -1,0 +1,21 @@
+{
+  "project_type": "Static HTML+CSS personal branding website demos",
+  "language": "HTML, CSS",
+  "build_system": "None - static files served directly",
+  "test_framework": "None - visual inspection only",
+  "build_command": null,
+  "test_command": null,
+  "verification_instructions": "Open site3/index.html in a browser and verify: (1) typography is professional and readable, (2) color palette is warm but sophisticated, (3) animations are subtle not bouncy, (4) card layouts are clean, (5) all content is preserved, (6) responsive design still works",
+  "snapshot_or_generated_files": null,
+  "setup_instructions": "No setup needed - pure static HTML/CSS files",
+  "environment_constraints": "INTEGRATIONS_ONLY network mode. No package installs needed. Google Fonts links are fine since they load client-side in the browser. No build tools, no JavaScript, no frameworks.",
+  "contribution_requirements": "Keep all Catan board game content intact. Only modify visual presentation (CSS and HTML structure where needed for styling).",
+  "key_patterns": "Site1 uses as a professional reference: CSS custom properties for theming, Inter + Playfair Display fonts, clean card layouts with subtle borders and shadows, gradient accents on hover (not in resting state), subtle translateY hover effects (-3px to -6px), 12px border-radius, proper spacing with section gaps, muted color palette with strategic accent usage, border-top section separators",
+  "relevant_files": [
+    "site3/index.html",
+    "site3/style.css",
+    "site1/style.css",
+    "site1/index.html"
+  ],
+  "directory_structure": "Root contains index.html (landing page), README.md, site1/ (professional profile), site2/ (K-Pop theme), site3/ (Catan fan page - target of redesign). Each site folder has index.html and style.css."
+}
