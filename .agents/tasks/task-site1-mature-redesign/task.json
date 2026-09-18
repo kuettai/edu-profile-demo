@@ -1,0 +1,7 @@
+{
+  "task_id": "task-site1-mature-redesign",
+  "task_description": "Redesign the UI of Site1 (site1/ static HTML+CSS profile) so it reads as mature and executive-grade instead of childish/playful, per user complaint (GitHub issue #5). Overhaul palette, typography, motion, iconography/emojis, and surface shapes while preserving all textual content and keeping the site pure HTML+CSS (no JS/frameworks), responsive, with working CSS-only dark mode and mobile nav. Work on branch fix/site1-mature-redesign; orchestrator handles push/PR.",
+  "status": "in_progress",
+  "feature_order": ["FEAT-001", "FEAT-002"],
+  "blocked_reason": null
+}
