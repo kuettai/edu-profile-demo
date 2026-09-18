@@ -1,0 +1,20 @@
+{
+  "project_type": "Static HTML+CSS personal branding website demo (Site1 - Solutions Architect profile)",
+  "language": "HTML, CSS",
+  "build_system": "None - static files served directly, no build step",
+  "test_framework": "None - visual inspection in a browser only",
+  "build_command": null,
+  "test_command": null,
+  "verification_instructions": "Open site1/index.html in a browser. Verify: (1) the overall look reads as mature/executive/professional rather than playful, (2) all original content/text is preserved, (3) light mode AND dark mode both look correct (toggle the sun/moon control in the navbar), (4) mobile hamburger nav still opens/closes, (5) responsive layout works at desktop (>900px), tablet (600-900px), and mobile (<600px) widths, (6) no JavaScript was added (grep for '<script' returns nothing), (7) prefers-reduced-motion block is preserved.",
+  "snapshot_or_generated_files": null,
+  "setup_instructions": "No setup needed - pure static HTML/CSS files. Just open site1/index.html in a browser.",
+  "environment_constraints": "INTEGRATIONS_ONLY network mode: no external package registries/downloads. Google Fonts are loaded client-side via <link> tags in the HTML, so referencing web fonts in the HTML is fine, but no packages/tooling can be installed. No build tools, no JavaScript, no frameworks may be introduced.",
+  "contribution_requirements": "Work on a feature branch (NOT main). Do NOT push or open a PR - the orchestrator handles that. Preserve all existing textual content (name, titles, stats, experience, achievements, testimonials, projects, links, footer). Only change visual presentation (CSS, and HTML class/markup where needed for styling). Keep the CSS-only dark-mode and mobile-nav checkbox hacks working.",
+  "key_patterns": "Two structural constraints documented inline in the code: (1) #dark-mode-toggle and #nav-toggle checkboxes MUST remain direct siblings of .navbar, main, .mobile-nav-panel, and footer for the general-sibling (~) combinator selectors to work - do not wrap these in container divs. (2) Dark mode is implemented by re-declaring CSS custom properties under '#dark-mode-toggle:checked ~ ...' selectors. Theming is driven entirely by CSS custom properties in :root (colors, gradients, spacing, radii, transitions, fonts). Fonts currently: Inter (body) + Playfair Display (headings) via Google Fonts CDN. Cards use border + border-radius + subtle shadow; hover uses translateY lift. Sections fade in via fadeInUp animation with staggered animation-delay.",
+  "childish_elements_to_address": "Elements that make the current design read as childish/playful (per user complaint): (1) heavy emoji usage - achievement-icon, fact-emoji, learning-icon, and the whole 'Fun Facts' section with large emojis; (2) bouncy/looping animations - float (avatar), glow (avatar-ring pulsing shadow), pulse, scale-up hovers; (3) trendy purple hero gradient #667eea -> #764ba2; (4) pastel/candy accent palette (peach #E8A87C, mint #85CDCA) used as primary decorative gradients; (5) pill-shaped everything (50px radius) and colorful project banner gradients (gradient-1..4); (6) large decorative quote glyph. The redesign should replace these with a restrained, editorial, executive aesthetic while keeping ALL content.",
+  "relevant_files": [
+    "site1/index.html",
+    "site1/style.css"
+  ],
+  "directory_structure": "Repo root has index.html (landing), README.md, and site1/, site2/, site3/ each with index.html + style.css. ONLY site1/ is in scope. site1/index.html (~20KB) holds all markup; site1/style.css (~30KB) holds all styling including :root custom properties, dark-mode overrides, section styles, fallbacks, responsive media queries, and reduced-motion block."
+}

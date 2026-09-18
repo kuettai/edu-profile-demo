@@ -3,56 +3,60 @@
    Pure CSS | No JavaScript | Dark Mode Support
    ══════════════════════════════════════════════════ */
 
-/* ── CSS Custom Properties (Light Theme) ── */
+/* ── CSS Custom Properties (Light Theme) ──
+   Restrained editorial/executive palette: a deep slate-ink neutral base with a
+   single disciplined steel-blue accent. No pastel candy tones, no multi-hue
+   gradients. Gradients below are subtle single-hue tonal shifts only. */
 :root {
-  /* Primary palette */
-  --primary: #6C8EBF;
-  --primary-light: #8CAAD4;
-  --primary-dark: #4a6d9c;
-  --primary-glow: rgba(108, 142, 191, 0.4);
+  /* Primary palette (single disciplined steel-blue accent) */
+  --primary: #2f4a63;
+  --primary-light: #56708a;
+  --primary-dark: #1f3345;
+  --primary-glow: rgba(47, 74, 99, 0.18);
 
-  /* Accent colors */
-  --accent: #E8A87C;
-  --accent-light: #F0C4A8;
-  --accent-dark: #D4845A;
-  --secondary: #85CDCA;
-  --secondary-dark: #5FABA8;
+  /* Accent colors - kept as aliases of the single accent family so nothing
+     reads as candy-colored. No peach/mint remain. */
+  --accent: #4a6076;
+  --accent-light: #6d8299;
+  --accent-dark: #2f4a63;
+  --secondary: #566472;
+  --secondary-dark: #3c4855;
 
   /* Neutrals */
-  --bg-primary: #fafbfe;
+  --bg-primary: #f6f5f2;
   --bg-secondary: #ffffff;
-  --bg-tertiary: #f0f4f8;
+  --bg-tertiary: #eceae5;
   --bg-card: #ffffff;
-  --bg-glass: rgba(255, 255, 255, 0.75);
-  --bg-nav: rgba(255, 255, 255, 0.85);
+  --bg-glass: rgba(255, 255, 255, 0.82);
+  --bg-nav: rgba(246, 245, 242, 0.88);
 
   /* Text */
-  --text-primary: #1a2332;
-  --text-secondary: #4a5568;
-  --text-muted: #8896a7;
-  --text-accent: #6C8EBF;
+  --text-primary: #1c2530;
+  --text-secondary: #46505c;
+  --text-muted: #7c8794;
+  --text-accent: #2f4a63;
 
-  /* Borders & Shadows */
-  --border: #e8edf3;
-  --border-light: #f0f4f8;
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.08);
-  --shadow-glow: 0 0 20px rgba(108, 142, 191, 0.2);
+  /* Borders & Shadows (soft, flat, no neon glow) */
+  --border: #e2e0da;
+  --border-light: #eceae5;
+  --shadow-sm: 0 1px 3px rgba(28, 37, 48, 0.05);
+  --shadow-md: 0 4px 16px rgba(28, 37, 48, 0.07);
+  --shadow-lg: 0 10px 32px rgba(28, 37, 48, 0.09);
+  --shadow-glow: 0 2px 10px rgba(28, 37, 48, 0.08);
 
-  /* Gradients */
-  --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-hero-overlay: linear-gradient(180deg, rgba(102, 126, 234, 0.03) 0%, rgba(118, 75, 162, 0.03) 100%);
-  --gradient-accent: linear-gradient(135deg, #6C8EBF, #85CDCA);
-  --gradient-warm: linear-gradient(135deg, #E8A87C, #6C8EBF);
-  --gradient-separator: linear-gradient(90deg, transparent, var(--primary), transparent);
+  /* Gradients - restrained single-hue tonal only */
+  --gradient-hero: linear-gradient(135deg, #2f4a63 0%, #1f3345 100%);
+  --gradient-hero-overlay: linear-gradient(180deg, rgba(47, 74, 99, 0.02) 0%, rgba(47, 74, 99, 0.04) 100%);
+  --gradient-accent: linear-gradient(135deg, #2f4a63, #4a6076);
+  --gradient-warm: linear-gradient(135deg, #4a6076, #2f4a63);
+  --gradient-separator: linear-gradient(90deg, transparent, var(--border), transparent);
 
   /* Spacing */
   --nav-height: 64px;
   --section-gap: 4rem;
   --container-max: 900px;
-  --border-radius: 12px;
-  --border-radius-lg: 20px;
+  --border-radius: 6px;
+  --border-radius-lg: 10px;
 
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -69,23 +73,38 @@
 #dark-mode-toggle:checked ~ main,
 #dark-mode-toggle:checked ~ .mobile-nav-panel,
 #dark-mode-toggle:checked ~ footer {
-  --bg-primary: #0f1419;
-  --bg-secondary: #1a2332;
-  --bg-tertiary: #1e2d3d;
-  --bg-card: #1a2332;
-  --bg-glass: rgba(15, 20, 25, 0.85);
-  --bg-nav: rgba(15, 20, 25, 0.9);
-  --text-primary: #e8edf3;
-  --text-secondary: #a8b8cc;
-  --text-muted: #6b7d92;
-  --text-accent: #8CAAD4;
-  --border: #2d3f52;
-  --border-light: #243447;
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 20px rgba(108, 142, 191, 0.3);
-  --gradient-hero-overlay: linear-gradient(180deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  /* Restrained dark palette to match the light editorial theme: deep ink
+     charcoal base with the same single steel-blue accent family. */
+  --primary: #7d97ae;
+  --primary-light: #9cb2c5;
+  --primary-dark: #5d768c;
+  --primary-glow: rgba(125, 151, 174, 0.22);
+  --accent: #8ba1b5;
+  --accent-light: #a6bac9;
+  --accent-dark: #7d97ae;
+  --secondary: #8892a0;
+  --secondary-dark: #a4adba;
+
+  --bg-primary: #14171c;
+  --bg-secondary: #1c2128;
+  --bg-tertiary: #232932;
+  --bg-card: #1c2128;
+  --bg-glass: rgba(20, 23, 28, 0.85);
+  --bg-nav: rgba(20, 23, 28, 0.9);
+  --text-primary: #e6e8eb;
+  --text-secondary: #aab2bd;
+  --text-muted: #7a828d;
+  --text-accent: #9cb2c5;
+  --border: #2d333c;
+  --border-light: #262c34;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  --gradient-hero: linear-gradient(135deg, #232932 0%, #14171c 100%);
+  --gradient-hero-overlay: linear-gradient(180deg, rgba(125, 151, 174, 0.03) 0%, rgba(125, 151, 174, 0.05) 100%);
+  --gradient-accent: linear-gradient(135deg, #5d768c, #7d97ae);
+  --gradient-warm: linear-gradient(135deg, #7d97ae, #5d768c);
 }
 
 /* ── Base Reset ── */
@@ -146,8 +165,7 @@ body {
 }
 
 .dark-mode-label:hover {
-  transform: scale(1.1);
-  box-shadow: var(--shadow-glow);
+  border-color: var(--primary);
 }
 
 .sun-icon {
@@ -191,11 +209,11 @@ body {
 
 .nav-brand {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
   text-decoration: none;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
 }
 
 .nav-links {
@@ -326,10 +344,10 @@ main {
 /* ── Typography ── */
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3.2rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
+  font-size: 2.8rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
   color: var(--text-primary);
 }
 
@@ -385,7 +403,7 @@ a:hover {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -409,29 +427,9 @@ a:hover {
   }
 }
 
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-@keyframes glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(108, 142, 191, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(108, 142, 191, 0.6); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
 .section {
   opacity: 0;
-  animation: fadeInUp 0.7s ease forwards;
+  animation: fadeInUp 0.6s ease forwards;
 }
 
 .hero { animation-delay: 0s; }
@@ -491,15 +489,14 @@ a:hover {
   position: relative;
   display: inline-block;
   border-radius: 50%;
-  padding: 4px;
-  background: var(--gradient-accent);
-  animation: glow 3s ease-in-out infinite;
+  padding: 3px;
+  background: var(--border);
+  box-shadow: var(--shadow-sm);
 }
 
 .avatar-ring svg {
   display: block;
   border-radius: 50%;
-  animation: float 4s ease-in-out infinite;
 }
 
 .subtitle {
@@ -524,20 +521,22 @@ a:hover {
   align-items: center;
   gap: 0.5rem;
   margin-top: 2rem;
-  padding: 0.85rem 2rem;
-  background: var(--gradient-accent);
-  border-radius: 50px;
-  font-size: 0.95rem;
-  font-weight: 600;
+  padding: 0.8rem 1.8rem;
+  background: var(--primary);
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   color: #fff;
   text-decoration: none;
   transition: all var(--transition-base);
-  box-shadow: 0 4px 15px var(--primary-glow);
+  box-shadow: var(--shadow-sm);
 }
 
 .cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px var(--primary-glow);
+  transform: translateY(-1px);
+  background: var(--primary-dark);
+  box-shadow: var(--shadow-md);
   color: #fff;
 }
 
@@ -598,7 +597,7 @@ a:hover {
 }
 
 .stat-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
   border-color: var(--primary-light);
 }
@@ -609,11 +608,12 @@ a:hover {
 
 .stat-number {
   display: block;
-  font-size: 2.4rem;
-  font-weight: 800;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  font-weight: 600;
   color: var(--primary);
   line-height: 1.2;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .stat-label {
@@ -661,51 +661,35 @@ a:hover {
 }
 
 .tag {
-  font-size: 0.85rem;
-  padding: 0.5rem 1rem;
+  font-size: 0.82rem;
+  padding: 0.4rem 0.9rem;
   border: 1px solid var(--border);
-  border-radius: 50px;
+  border-radius: var(--border-radius);
   color: var(--text-secondary);
   transition: all var(--transition-base);
   background: var(--bg-tertiary);
 }
 
 .tag:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-glow);
+  border-color: var(--primary-light);
+  color: var(--text-primary);
 }
 
-.tag-primary {
-  border-color: rgba(108, 142, 191, 0.3);
-  color: var(--primary);
-  background: rgba(108, 142, 191, 0.08);
-}
-
-.tag-primary:hover {
-  background: rgba(108, 142, 191, 0.15);
-  border-color: var(--primary);
-}
-
-.tag-accent {
-  border-color: rgba(232, 168, 124, 0.3);
-  color: var(--accent-dark);
-  background: rgba(232, 168, 124, 0.08);
-}
-
-.tag-accent:hover {
-  background: rgba(232, 168, 124, 0.15);
-  border-color: var(--accent);
-}
-
+/* All three tag variants share the single restrained accent family so the
+   skills section reads as cohesive rather than candy-colored. */
+.tag-primary,
+.tag-accent,
 .tag-secondary {
-  border-color: rgba(133, 205, 202, 0.3);
-  color: var(--secondary-dark);
-  background: rgba(133, 205, 202, 0.08);
+  border-color: var(--border);
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
 }
 
+.tag-primary:hover,
+.tag-accent:hover,
 .tag-secondary:hover {
-  background: rgba(133, 205, 202, 0.15);
-  border-color: var(--secondary);
+  color: var(--primary);
+  border-color: var(--primary-light);
 }
 
 /* ── Experience Timeline ── */
@@ -749,8 +733,6 @@ a:hover {
 
 .timeline-item:hover .timeline-dot {
   background: var(--primary);
-  box-shadow: 0 0 12px var(--primary-glow);
-  transform: scale(1.2);
 }
 
 .timeline-card {
@@ -805,13 +787,19 @@ a:hover {
 }
 
 .achievement-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
+/* Restrained monochrome mark replacing the former emoji glyph. A short
+   accent-colored vertical rule sets each achievement apart typographically. */
 .achievement-icon {
-  font-size: 1.5rem;
   flex-shrink: 0;
+  width: 3px;
+  align-self: stretch;
+  min-height: 1.5rem;
+  background: var(--primary);
+  border-radius: 2px;
 }
 
 .achievement-card p {
@@ -837,19 +825,19 @@ a:hover {
 }
 
 .testimonial-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
 .testimonial-quote {
   font-family: 'Playfair Display', serif;
-  font-size: 4rem;
+  font-size: 2rem;
   line-height: 1;
-  color: var(--primary-light);
-  opacity: 0.4;
+  color: var(--text-muted);
+  opacity: 0.45;
   position: absolute;
-  top: 0.5rem;
-  left: 1.5rem;
+  top: 1rem;
+  left: 1.6rem;
 }
 
 .testimonial-text {
@@ -909,15 +897,20 @@ a:hover {
 }
 
 .fact-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
   border-color: var(--primary-light);
 }
 
+/* Restrained monochrome mark replacing the former large emoji. A small centered
+   accent rule keeps the fun-facts cards sober and consistent. */
 .fact-emoji {
   display: block;
-  font-size: 2rem;
-  margin-bottom: 0.8rem;
+  width: 28px;
+  height: 2px;
+  margin: 0 auto 1rem;
+  background: var(--primary);
+  border-radius: 1px;
 }
 
 .fact-card p {
@@ -958,7 +951,7 @@ a:hover {
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
   color: inherit;
 }
@@ -990,7 +983,7 @@ a:hover {
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
   padding: 0.25rem 0.7rem;
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1004,13 +997,15 @@ a:hover {
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(4px);
   padding: 0.25rem 0.7rem;
-  border-radius: 20px;
+  border-radius: var(--border-radius);
 }
 
-.gradient-1 { background: linear-gradient(135deg, #6C8EBF, #4a6d9c); }
-.gradient-2 { background: linear-gradient(135deg, #7D9B76, #5a7d52); }
-.gradient-3 { background: linear-gradient(135deg, #C4A4A4, #a88585); }
-.gradient-4 { background: linear-gradient(135deg, #B8A9C9, #8e7ba8); }
+/* Restrained single-hue tonal banners - a cohesive slate scale rather than
+   the former blue/green/mauve/lavender candy set. */
+.gradient-1 { background: linear-gradient(135deg, #2f4a63, #1f3345); }
+.gradient-2 { background: linear-gradient(135deg, #46505c, #313a44); }
+.gradient-3 { background: linear-gradient(135deg, #4a6076, #33465a); }
+.gradient-4 { background: linear-gradient(135deg, #566472, #3c4855); }
 
 .project-body {
   padding: 1.2rem 1.4rem 1.4rem;
@@ -1040,7 +1035,7 @@ a:hover {
   font-size: 0.7rem;
   padding: 0.25rem 0.6rem;
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   color: var(--text-muted);
   background: var(--bg-tertiary);
   transition: all var(--transition-base);
@@ -1081,7 +1076,7 @@ a:hover {
 }
 
 .learning-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
@@ -1089,10 +1084,14 @@ a:hover {
   transform: scaleX(1);
 }
 
+/* Restrained monochrome mark replacing the former emoji glyph. */
 .learning-icon {
   display: block;
-  font-size: 2rem;
-  margin-bottom: 0.8rem;
+  width: 28px;
+  height: 2px;
+  margin-bottom: 1rem;
+  background: var(--primary);
+  border-radius: 1px;
 }
 
 .learning-card h3 {
@@ -1132,7 +1131,7 @@ a:hover {
   align-items: center;
   gap: 0.6rem;
   padding: 0.75rem 1.5rem;
-  border-radius: 50px;
+  border-radius: var(--border-radius);
   font-size: 0.9rem;
   font-weight: 500;
   text-decoration: none;
@@ -1143,8 +1142,9 @@ a:hover {
 }
 
 .social-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--primary-light);
 }
 
 .social-btn.linkedin:hover {
@@ -1222,7 +1222,7 @@ footer {
   text-decoration: none;
   padding: 0.5rem 1.2rem;
   border: 1px solid var(--border);
-  border-radius: 50px;
+  border-radius: var(--border-radius);
   transition: all var(--transition-base);
 }
 
@@ -1230,7 +1230,7 @@ footer {
   background: var(--primary);
   color: #fff;
   border-color: var(--primary);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 /* ══════════════════════════════════════════════════
@@ -1416,7 +1416,7 @@ footer {
   }
 
   .testimonial-quote {
-    font-size: 3rem;
+    font-size: 1.8rem;
   }
 
   footer {
